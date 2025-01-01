@@ -36,3 +36,38 @@
     transform: rotate(360deg);
   }
 }
+
+/* App.css */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
+  gap: 20px; /* Gap between items */
+}
+
+.grid-item {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+/* App.css */
+.react-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.react-table th,
+.react-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.react-table th {
+  background-color: #f4f4f4;
+}
+
+.react-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}

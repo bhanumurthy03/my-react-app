@@ -1,13 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
-import DocumentUpload from './DocumentUpload';
+import SideBySideGrid from './DocumentUpload';
+import Table from './Table';
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">       
-        
-        <DocumentUpload />
+        <SideBySideGrid />
+        <div className="table-container">
+          <Table />
+        </div>
       </header>
     </div>
   );

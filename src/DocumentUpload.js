@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDropzone } from 'react-dropzone';
+import './DocumentUpload.css'; 
 
 const DocumentUpload = () => {
   const [file, setFile] = useState(null);
@@ -65,29 +66,51 @@ const DocumentUpload = () => {
 
   return (
     <div className="document-upload">
-      <div {...getRootProps()} style={styles.dropzone}>
-        <input {...getInputProps()} />
-        <p>Drag & drop a document here, or click to select a file</p>
-      </div>
 
-      {error && <div style={styles.error}>{error}</div>}
-
-      {file && (
-        <div style={styles.fileInfo}>
-          <strong>Selected File:</strong> {file.name} ({(file.size / 1024).toFixed(2)} KB)
+      <div className="grid-container">
+        
+        <div className="dropdown-column">
+          <select className="dropdown">
+            <option value="">Select file type</option>
+            <option value="Option 1">Option 1</option>
+            <option value="Option 2">Option 2</option>
+            <option value="Option 3">Option 3</option>
+          </select>
         </div>
-      )}
 
-      <button onClick={handleSubmit} disabled={!file} style={styles.uploadButton}>
-        Upload Document
-      </button>
-    </div>
+        <div className="content-column">
+          <div {...getRootProps()} style={styles.dropzone}>
+            <input {...getInputProps()} />
+            <p>Browse a file</p>
+          </div>
+
+          {error && <div style={styles.error}>{error}</div>}
+
+         
+        </div>
+        
+        <div className="button-column">
+          <button onClick={handleSubmit} disabled={!file} style={styles.uploadButton}>
+            Add Input Document
+          </button>
+        </div>
+      </div>   
+
+      <div>
+        {file && (
+          <div style={styles.fileInfo}>
+            <strong>Selected File:</strong> {file.name} ({(file.size / 1024).toFixed(2)} KB)
+          </div>
+        )}
+      </div> 
+     
+    </div>  
   );
 };
 
 const styles = {
   dropzone: {
-    border: '2px dashed #007BFF',
+    border: '2px dashed #4CAF50',
     padding: '20px',
     borderRadius: '8px',
     textAlign: 'center',
@@ -103,7 +126,7 @@ const styles = {
   uploadButton: {
     marginTop: '20px',
     padding: '10px 20px',
-    backgroundColor: '#007BFF',
+    backgroundColor: '#4CAF50',
     color: 'white',
     border: 'none',
     borderRadius: '4px',
